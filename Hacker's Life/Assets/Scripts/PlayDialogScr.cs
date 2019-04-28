@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//using DG.Tweening;
+using DG.Tweening;
 
-public class NewBehaviourScript : MonoBehaviour
+
+public class PlayDialogScr: MonoBehaviour
 {
     public Dialog.DialogType DialogType;
-    public DIalogObjScr Dialog;
+    public DialogObjScr Dialog;
 
     private void Awake()
     {
-        //DOTween.Init();
+        DOTween.Init();
     }
 
-    
+    public void StartDialog()
+    {
+        GetComponent<Button>().enabled = false;
+    }
 
+    public void EndDialog()
+    {
+        GetComponent<Button>().enabled = true;
+    }
 }
